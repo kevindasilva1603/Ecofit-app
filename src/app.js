@@ -4,6 +4,7 @@ const userRoutes = require('./routes/userRoutes');
 const activityRoutes = require('./routes/activityRoutes');
 const challengeRoutes = require('./routes/challengeRoutes');
 const rewardRoutes = require('./routes/rewardRoutes');
+const userRewardRoutes = require('./routes/userRewardRoutes');
 
 const app = express();
 
@@ -19,5 +20,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/activities', activityRoutes);
 app.use('/api/challenges', challengeRoutes);
 app.use('/api/rewards', rewardRoutes);
+app.use('/api/user-rewards', userRewardRoutes);
+app.use('/api/user-rewards', userRewardRoutes);
 
 module.exports = app;
