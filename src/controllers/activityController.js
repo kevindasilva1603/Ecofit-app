@@ -1,10 +1,10 @@
 const db = require('../models/activityModel');
 
 exports.createActivity = (req, res) => {
-  const { type, distance, duration, points, path } = req.body;
+  const { type, distance, duration, points, path, photo } = req.body;
   const userId = req.user.id;
 
-  console.log('Requête création activité:', { userId, type, distance, duration, points, path });
+  console.log('Requête création activité:', { userId, type, distance, duration, points, path, photo });
 
   if (!type || distance == null) {
     console.log('Type ou distance manquants');
@@ -12,9 +12,9 @@ exports.createActivity = (req, res) => {
   }
 
   db.run(
-    `INSERT INTO activities (user_id, type, distance, duration, points, path)
-     VALUES (?, ?, ?, ?, ?, ?)`,
-    [userId, type, distance, duration || 0, points || 0, JSON.stringify(path || [])],
+    `INSERT INTO activities (user_id, type, distance, duration, points, path, photo)
+     VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    [userId, type, distance, duration || 0, points || 0, JSON.stringify(path || []), photo || null],
     function (err) {
       if (err) {
         console.error('Erreur création activité:', err);
