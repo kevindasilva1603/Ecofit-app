@@ -21,19 +21,21 @@ db.run(`
 // Table activities
 db.run(`
   CREATE TABLE IF NOT EXISTS activities (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_id INTEGER NOT NULL,
-    type TEXT NOT NULL,
-    distance REAL NOT NULL,
-    duration INTEGER DEFAULT 0,
-    points INTEGER NOT NULL DEFAULT 0,
-    path TEXT DEFAULT '[]',
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-  )
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id INTEGER,
+  type TEXT,
+  distance REAL,
+  duration INTEGER,
+  points INTEGER,
+  created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+  path TEXT,
+  photo TEXT,
+  FOREIGN KEY(user_id) REFERENCES users(id)
+)
 `);
 
 // ✅ Table rewards avec cost
-// Ajoute cette table dans db.js
+
 db.run(`
   CREATE TABLE IF NOT EXISTS rewards (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
