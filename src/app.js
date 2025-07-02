@@ -6,6 +6,7 @@ const challengeRoutes = require('./routes/challengeRoutes');
 const rewardRoutes = require('./routes/rewardRoutes');
 const userRewardRoutes = require('./routes/userRewardRoutes');
 const profileRoutes = require('./routes/profileRoutes');
+const pointsRoutes = require('./routes/pointsRoutes')
 const app = express();
 
 app.use(cors());
@@ -22,5 +23,6 @@ app.use('/api/challenges', challengeRoutes);
 app.use('/api/rewards', rewardRoutes);
 app.use('/api/user-rewards', userRewardRoutes);
 app.use('/api/user-rewards', userRewardRoutes);
-app.use('/api/profile', profileRoutes)
+app.use('/api/profile', profileRoutes);
+app.use('/api/points', pointsRoutes);
 module.exports = app;

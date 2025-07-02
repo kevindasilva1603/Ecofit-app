@@ -12,6 +12,7 @@ db.run(`
 `);
 
 // Table des récompenses débloquées par utilisateur
+// manque la colonne cost
 db.run(`
   CREATE TABLE IF NOT EXISTS user_rewards (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
