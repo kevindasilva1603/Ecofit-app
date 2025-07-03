@@ -18,7 +18,7 @@ Ce backend gère l’authentification, les activités, les éco-points, les déf
 
 ## 📁 Structure du projet
 
-```
+
 
 src/
 │
@@ -29,7 +29,7 @@ src/
 ├── config/               # Connexion à la base SQLite
 └── server.js             # Point d’entrée principal
 
-````
+
 
 ---
 
